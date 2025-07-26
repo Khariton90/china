@@ -26,7 +26,7 @@ export default defineConfig(({ command }) => {
 
 	return {
 		root: '.',
-		base: './',
+		base: './china',
 		plugins: [
 			// 1) Handlebars для partials
 			handlebars({
