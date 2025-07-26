@@ -1,0 +1,146 @@
+@use './_variables.scss' as *;
+@use './components/' as *;
+
+.content {
+	min-width: 375px;
+	width: 100%;
+	margin-top: 80px;
+	// margin: 0 auto;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 19px;
+
+	& button {
+		margin-top: 33px;
+	}
+
+	&__label {
+		position: relative;
+		padding-left: 40px;
+		font-family: 'Averta', sans-serif;
+		font-weight: 400;
+		font-size: clamp(18px, 4.8vw, 22px);
+		letter-spacing: 0.02em;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: min(6.66vw, 25px);
+			height: min(6.66vw, 25px);
+			border-radius: 100%;
+			background-color: rgba(#232240, 0.2);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			width: 17px;
+			height: 17px;
+			background: linear-gradient(
+				$color-gradient-blue,
+				$color-gradient-lightblue
+			);
+			border-radius: 100%;
+			opacity: 0;
+		}
+
+		&:has(input:checked) {
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.button {
+	font-family: 'Averta', sans-serif;
+	font-weight: 600;
+	font-size: 1.25rem;
+	border-radius: 10px;
+	padding: 14px 56px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&:hover {
+		opacity: 0.9;
+		transition: all 0.2s ease;
+	}
+
+	&.primary {
+		background-color: $color-primary;
+		color: $color-light;
+		box-shadow: 0 4px 25px rgba(#000, 0.25);
+	}
+
+	&.secondary {
+		background-color: $color-pinker;
+		color: $color-light;
+		box-shadow: 0 4px 25px rgba(#000, 0.25);
+	}
+
+	&.light {
+		background-color: $color-light;
+		color: rgba($color-dark, 0.8);
+	}
+}
+
+.color-pink {
+	color: $color-pink;
+	font-weight: 600;
+}
+
+.social {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.glass {
+	border-radius: 50%;
+	background: rgba(233, 227, 227, 0.08);
+	border: 2px solid transparent;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6),
+		0 16px 32px rgba(0, 0, 0, 0.12);
+	backdrop-filter: url(#frosted);
+	-webkit-backdrop-filter: url(#frosted);
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+///
+
+.accordion-head {
+	cursor: pointer;
+	width: 100%;
+	transition: 0.4s;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	position: relative;
+}
+
+.accordion-body {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	position: relative;
+}
+
+.accordion.active {
+	& svg {
+		transform: rotate(180deg);
+	}
+}

@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Atyp";
+  font-style: normal;
+  font-weight: 400;
+  src: local("GeologicaLocal"),
+    url("/fonts/atyp-display/atyp-light.woff2") format("woff2"),
+    url("/fonts/atyp-display/AtypDisplay-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Atyp";
+  font-style: normal;
+  font-weight: 500;
+  src: local("GeologicaLocal"),
+    url("/fonts/atyp-display/AtypDisplay-Medium.woff2") format("woff2"),
+    url("/fonts/atyp-display/AtypDisplay-Medium.ttf") format("ttf");
+}
